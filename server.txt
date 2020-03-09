@@ -1,1 +1,5 @@
 python3 -m http.server 3000
+
+gitpod.io#https://github.com/MrJnl/infomtica
+
+opslaan: 3 teken -> files selecteren -> commit 0> push
