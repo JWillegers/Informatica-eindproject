@@ -1,11 +1,13 @@
-var bubble="true";
+var bubble=true;
 var insertion=false;
 var quick=false;
 var merge=false;
 var play=false;
 
-function bubblesort() {
-    if (play===false) {
+
+
+function bubblesortbutton() {
+    if (play==false) {
         bubble=true;
         insertion=false;
         quick=false;
@@ -13,8 +15,8 @@ function bubblesort() {
     }
 }
 
-function insertionsort() {
-    if (play===false) {
+function insertionsortbutton() {
+    if (play==false) {
         bubble=false;
         insertion=true;
         quick=false;
@@ -23,8 +25,8 @@ function insertionsort() {
 }
 
 
-function quicksort() {
-    if (play===false) {
+function quicksortbutton() {
+    if (play==false) {
         bubble=false;
         insertion=false;
         quick=true;
@@ -33,8 +35,8 @@ function quicksort() {
 }
 
 
-function mergesort() {
-    if (play===false) {
+function mergesortbutton() {
+    if (play==false) {
         bubble=false;
         insertion=false;
         quick=false;
@@ -43,14 +45,26 @@ function mergesort() {
 }
 
 
-function play() {
+function playbutton() {
 
 }
 
-if (bubble=="true") {
-    text('test');
+if (bubble==true) {
+function setup() {
+  canvas = createCanvas(450,450);
+  background('silver');
+  canvas.parent('processing');
+  //noLoop();
 }
 
-else {
-    return play;
+function draw() {
+  noStroke();
+  fill('steelblue');
+  ellipse(0,0,800);
+  fill('deepskyblue');
+  ellipse(450,450,400); }
 }
+
+
+
+
