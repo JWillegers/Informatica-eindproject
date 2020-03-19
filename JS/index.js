@@ -1,7 +1,8 @@
 var sorting='bubble';
 var play=false;
 
-var Arrbubble=[80,10,90,50,100,30,60,20,40,70];
+//https://www.random.org/integer-sets/?sets=1&num=100&min=1&max=100&seqnos=on&commas=on&order=index&format=html&rnd=new
+var Arrbubble=[29, 45, 6, 67, 55, 24, 71, 42, 15, 34, 38, 76, 20, 19, 54, 81, 59, 23, 7, 1, 64, 93, 49, 74, 72, 70, 4, 58, 88, 33, 75, 53, 9, 57, 94, 36, 79, 30, 44, 60, 80, 82, 52, 85, 48, 90, 73, 50, 21, 5, 83, 39, 66, 92, 62, 41, 25, 12, 18, 61, 40, 89, 68, 3, 26, 69, 10, 56, 46, 43, 86, 77, 14, 17, 32, 27, 31, 65, 8, 16, 37, 35, 51, 87, 2, 28, 22, 63, 13, 11, 84, 47, 78, 91];
 var BL=Arrbubble.length;
 var Arrinsertion=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52];
 var IL=Arrinsertion.length;
@@ -23,25 +24,11 @@ function draw() {
         clear();
         fill('red');
         for (b=1;b<BL;b++) {
-            rect(10+20*b,0,20,-1*Arrbubble[b]);
+            rect(10+20*b,0,20,-5*Arrbubble[b]);
         }
 
         if (play==true) {
-            for (i=0; i<BL-1;i++) {
-                swapped=false;
-		        for (j=0;j<BL-1;j++) {
-			        if (Arrbubble[j] > Arrbubble[j + 1]) {
-				        // swap
-				        let t = Arrbubble[j];
-				        Arrbubble[j] = Arrbubble[j + 1];
-                        Arrbubble[j + 1] = t;
-                        swapped=true;
-			        }
-                }
-                if (swapped==false) {
-                    break;
-                }
-	        }
+            bubblesort();
         }
     }
     else if (sorting=='insertion') {
@@ -72,7 +59,23 @@ function button_play() {
     play=true;
     }
 
-
+function bubblesort() {
+    for (i=0; i<BL-1;i++) {
+        swapped=false;
+		    for (j=0;j<BL-1;j++) {
+			    if (Arrbubble[j] > Arrbubble[j + 1]) {
+				    // swap
+				    let t = Arrbubble[j];
+				    Arrbubble[j] = Arrbubble[j + 1];
+                    Arrbubble[j + 1] = t;
+                    swapped=true;
+			    }
+            }
+        if (swapped==false) {
+            break;
+        }
+	}
+}
 
 
 
