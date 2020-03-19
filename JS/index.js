@@ -41,6 +41,7 @@ function draw() {
 }
 
 function button(choice) {
+ play=false;
  sorting = choice;
  Arrbubble.sort(function(a, b){return 0.5 - Math.random()});
  Arrinsertion.sort(function(a, b){return 0.5 - Math.random()});
@@ -50,7 +51,25 @@ function button(choice) {
 }
 
 function button_play() {
- 
+    play=true;
+    if (sorting=='bubble' && play==true) {
+        var swapped=false;
+        var i,j,tembB
+        for(i=0;i<IL-1;i++) {
+            swapped=false;
+            for(j=0;j<IL-i;j++) {
+                if (Arrbubble[j] > Arrbubble[j+1]) {
+                    tempB = arrBubble[j];
+                    Arrbubble[j]=Arrbubble[j+1];
+                    Arrbubble[j+1]=tempB;
+                    swapped=true;
+                }
+            }
+            if (swapped==false) {
+                break;
+            }
+        }
+    }
 }
 
 
