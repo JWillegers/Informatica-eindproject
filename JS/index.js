@@ -23,7 +23,25 @@ function draw() {
         clear();
         fill('red');
         for (b=1;b<BL;b++) {
-            rect(10+30*b,0,20,-1*Arrbubble[b]);
+            rect(10+20*b,0,20,-1*Arrbubble[b]);
+        }
+
+        if (play==true) {
+            for (i=0; i<BL-1;i++) {
+                swapped=false;
+		        for (j=0;j<BL-1;j++) {
+			        if (Arrbubble[j] > Arrbubble[j + 1]) {
+				        // swap
+				        let t = Arrbubble[j];
+				        Arrbubble[j] = Arrbubble[j + 1];
+                        Arrbubble[j + 1] = t;
+                        swapped=true;
+			        }
+                }
+                if (swapped==false) {
+                    break;
+                }
+	        }
         }
     }
     else if (sorting=='insertion') {
@@ -52,25 +70,7 @@ function button(choice) {
 
 function button_play() {
     play=true;
-    if (sorting=='bubble' && play==true) {
-        var swapped=false;
-        var i,j,tembB
-        for(i=0;i<IL-1;i++) {
-            swapped=false;
-            for(j=0;j<IL-i;j++) {
-                if (Arrbubble[j] > Arrbubble[j+1]) {
-                    tempB = arrBubble[j];
-                    Arrbubble[j]=Arrbubble[j+1];
-                    Arrbubble[j+1]=tempB;
-                    swapped=true;
-                }
-            }
-            if (swapped==false) {
-                break;
-            }
-        }
     }
-}
 
 
 
