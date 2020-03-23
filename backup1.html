@@ -1,13 +1,13 @@
+
 <!DOCTYPE html>
 
 <html lang="nl">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="CSS/prism_wit.css">
     <script src="JS/prism.js"></script>
     <!-- http://prismjs.com/ -->
-    <link rel="stylesheet" type="text/css" href="CSS/games.css">
-    <script src="JS/P5/p5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="JS/p5.min.js"></script>
     <!-- https://p5js.org/download/ -->
   </head>
   <body>
@@ -19,11 +19,13 @@
       <div id="processing"></div>
     </div>
     <div class="container" id="button-container" style='text-align: center;'>
-      <button class="hoofdstuk" onclick="toonCode()">Toon Javascript-Code</button>
-      <button class="hoofdstuk" id="Ubutton" onclick="toonUitwerkingen()">Toon Uitwerkingen</button>
-      <button class="hoofdstuk" id="Tbutton" onclick="gaTerug()">Terug naar Opgave</button>
+      <button class="hoofdstuk" onclick="button('bubble')">Bubble Sort</button>
+      <button class="hoofdstuk" onclick="button('insertion')">Insertion Sort</button>
+      <button class="hoofdstuk" id="play" onclick="button_play()">Play</button>
+      <button class="hoofdstuk" onclick="button('quick')">Quick Sort</button>
+      <button class="hoofdstuk" onclick="button('merge')">Merge Sort</button>
       <div id="code-container" style="display: none;"></div>
     </div>
-  <script src="JS/SLOBF.js"></script>
+  <script src="JS/index.js"></script>
   </body>
 </html>
