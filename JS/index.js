@@ -87,7 +87,17 @@ function button_play() {
 function bubblesort() { //https://www.geeksforgeeks.org/bubble-sort/
     for (i=0; i<BL-1;i++) {
         swapped=false;
-		    for (j=0;j<BL-1;j++) {
+        var interval1=setInterval(bubblesort2,100);   
+        if (swapped==false) {
+            clearInterval(interval1);
+            break;
+        }
+    }
+    play=false;
+}
+
+function bubblesort2() {
+    for (j=0;j<BL-1;j++) {
 			    if (Arrbubble[j] > Arrbubble[j + 1]) {
 				    // swap
 				    let t = Arrbubble[j];
@@ -96,11 +106,6 @@ function bubblesort() { //https://www.geeksforgeeks.org/bubble-sort/
                     swapped=true;
 			    }
             }
-        if (swapped==false) {
-            break;
-        }
-    }
-    play=false;
 }
 
 function insertionsort() { //https://www.geeksforgeeks.org/insertion-sort/
