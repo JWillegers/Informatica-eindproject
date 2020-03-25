@@ -72,7 +72,6 @@ function draw() {
 
 function button(choice) {
  play=false;
- //clearInterval(interval1);
  sorting = choice;
  Arrbubble.sort(function(a, b){return 0.5 - Math.random()});
  Arrinsertion.sort(function(a, b){return 0.5 - Math.random()});
@@ -88,22 +87,9 @@ function button_play() {
 function bubblesort() { //https://www.geeksforgeeks.org/bubble-sort/
     for (i=0; i<BL-1;i++) {
         swapped=false;
-        setTimeout(leeg(),1000*i);
-        bubblesort2(); 
-        if (swapped==false) {
-            
-            break;
-        }
-    }
-    play=false;
-}
-var test=0;
-function leeg() {
-    test++;
-}
-
-function bubblesort2() {
-    for (j=0;j<BL-1;j++) {
+        Arrbubble.forEach((i) => {
+            setTimeout(()=> {
+                for (j=0;j<BL-1;j++) {
 			    if (Arrbubble[j] > Arrbubble[j + 1]) {
 				    // swap
 				    let t = Arrbubble[j];
@@ -112,6 +98,14 @@ function bubblesort2() {
                     swapped=true;
 			    }
             }
+            },i*100)
+        });
+        if (swapped==false) {
+            
+            break;
+        }
+    }
+    play=false;
 }
 
 function insertionsort() { //https://www.geeksforgeeks.org/insertion-sort/
