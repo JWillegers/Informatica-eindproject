@@ -72,6 +72,7 @@ function draw() {
 
 function button(choice) {
  play=false;
+ //clearInterval(interval1);
  sorting = choice;
  Arrbubble.sort(function(a, b){return 0.5 - Math.random()});
  Arrinsertion.sort(function(a, b){return 0.5 - Math.random()});
@@ -87,13 +88,18 @@ function button_play() {
 function bubblesort() { //https://www.geeksforgeeks.org/bubble-sort/
     for (i=0; i<BL-1;i++) {
         swapped=false;
-        var interval1=setInterval(bubblesort2,100);   
+        setTimeout(leeg(),1000*i);
+        bubblesort2(); 
         if (swapped==false) {
-            clearInterval(interval1);
+            
             break;
         }
     }
     play=false;
+}
+var test=0;
+function leeg() {
+    test++;
 }
 
 function bubblesort2() {
