@@ -17,6 +17,7 @@ function setup() {
   background('white');
   canvas.parent('processing');
   //noLoop();
+
 }
 
 function draw() {
@@ -52,7 +53,7 @@ function draw() {
             rect(40+1830/QL*q,0,1830/QL,maxheight/QL*Arrquick[q]);
         }
         if (play==true) {
-            quicksort();
+            quicksort(Arrquick,0,QL-1);
         }
     }
     else if (sorting=='merge') {
@@ -87,7 +88,7 @@ function button_play() {
 function bubblesort() { //https://www.geeksforgeeks.org/bubble-sort/
     for (i=0; i<BL-1;i++) {
         swapped=false;
-        Arrbubble.forEach((i) => {
+        Arrbubble.forEach((i) => { //https://travishorn.com/delaying-foreach-iterations-2ebd4b29ad30?gi=d77de2f3af94
             setTimeout(()=> {
                 for (j=0;j<BL-1;j++) {
 			    if (Arrbubble[j] > Arrbubble[j + 1]) {
@@ -106,7 +107,6 @@ function bubblesort() { //https://www.geeksforgeeks.org/bubble-sort/
     }
     play=false;
 }
-
 function insertionsort() { //https://www.geeksforgeeks.org/insertion-sort/
     for(i=0;i<IL;++i) {
         Arrinsertion.forEach((i) => {
@@ -124,8 +124,51 @@ function insertionsort() { //https://www.geeksforgeeks.org/insertion-sort/
     play=false;
 }
 
-function quicksort() {
+/*async*/ function quicksort(arr, start, end) { //https://github.com/CodingTrain/website/blob/master/CodingChallenges/CC_143_QuickSort/P5/sketch.js
+    if (start>=end) {
+        return;
+    }
+    let index = /*await*/ partition(arr, start, end);
+    /*states[index]= -1;*/
+    
+    await Promise.all([
+        quicksort(arr, start, index-1),
+        quicksort(arr, index+1, end) 
+    ]);
+}
 
+async function partition(arr, start, end) { //quicksort
+    for (let i=start;i<end;i++) {
+        states[i]=1;
+    }
+    let pivotValue=arr[end];
+    let pivotIndex=start;
+    states[pivotIndex]=0;
+    for (let i=start;i<end;i++) {
+        if (arr[i]<pivotValue) {
+            states[pivotIndex]=-1;
+            pivotIndex++;
+            states[pivotIndex]=0;
+        }
+    }
+    await swap(arr, pivotIndex, end);
+    for (let i=start;i<end;i++) {
+        if (i != pivotIndex) {
+            states[i]= -1;
+        }
+    }
+    return pivotIndex;
+}
+
+async function swap(arr, v, w) { //quick sort
+    await sleep(100);
+    let temp=arr[v];
+    arr[v]=arr[w];
+    arr[w]=temp;
+}
+
+function sleep(ms) { //delay tussen stappen voor quicksort
+    return new Promise(resolve => setTimeout(resove, ms));
 }
 
 function mergesort() { //https://www.geeksforgeeks.org/merge-sort/
