@@ -67,7 +67,7 @@ function draw() {
             rect(40+1830/ML*m,0,1830/ML,maxheight/ML*Arrmerge[m]);
         }
         if (play==true) {
-            mergesort();
+            sort(Arrmerge,0,ML-1);
         }
     }
     else {
@@ -174,8 +174,53 @@ function sleep(ms) { //delay tussen stappen voor quicksort
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function mergesort() { //https://www.geeksforgeeks.org/merge-sort/
+async function merge(arr,l,m,r) { //https://www.geeksforgeeks.org/merge-sort/
+    let n1=m-1+1;
+    let n2=r-m;
 
+    var L= [n1];
+    var R= [n2];
+
+    for (let i=0;i<n1;++i) {
+        L[i]=arr[l+i];
+    }
+    for (let j=0;j<n2;++j) {
+        R[j]=arr[m+1+j];
+    }
+
+    let i=0,j=0;
+    let k=l;
+    while (i<n1 && j<n2) {
+        if (L[i]<=R[j]) {
+            arr[k]=L[i];
+            i++;
+        }
+        else {
+            arr[k]=R[j];
+            j++;
+        }
+    }
+
+    while (i<n1) {
+        arr[k]=L[i];
+        i++;
+        k++;
+    }
+
+    while (j<n2) {
+        arr[k]=R[j];
+        j++;
+        k++;
+    }
+}
+
+async function sort(arr,l,r) {
+    if (l<r) {
+        let m = (l+r)/2;
+        await sort(arr,l,m);
+        await sort(arr,m+1,r);
+        await merge(arr,l,m,r);
+    }
 }
 
 
