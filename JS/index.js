@@ -101,7 +101,6 @@ function bubblesort() { //https://www.geeksforgeeks.org/bubble-sort/
             },i*100)
         });
         if (swapped==false) {
-            
             break;
         }
     }
@@ -110,13 +109,17 @@ function bubblesort() { //https://www.geeksforgeeks.org/bubble-sort/
 
 function insertionsort() { //https://www.geeksforgeeks.org/insertion-sort/
     for(i=0;i<IL;++i) {
-        var key=Arrinsertion[i];
-        var j=i-1;
-        while (j>=0 && Arrinsertion[j]>key) {
-            Arrinsertion[j+1]=Arrinsertion[j];
-            j=j-1;
-        }
-        Arrinsertion[j+1]=key;
+        Arrinsertion.forEach((i) => {
+            setTimeout(() => { 
+                var key=Arrinsertion[i];
+                var j=i-1; 
+                while (j>=0 && Arrinsertion[j]>key) {    
+                    Arrinsertion[j+1]=Arrinsertion[j];
+                    j=j-1;
+                }
+            Arrinsertion[j+1]=key;
+            },i*100)
+        });
     }
     play=false;
 }
