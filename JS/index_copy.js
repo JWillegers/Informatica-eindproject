@@ -1,6 +1,10 @@
 var sorting='bubble';
 var play=false;
-var maxheight=-500;
+var SH=screen.height*0.8; //screen heigh
+var SW=screen.width;      //screen width
+var AW=SW-0.05*SW;        //totale width balkjes
+var MW=SW*0.02;           //width tussen balkjes en zijkant schrem (marge width)
+var maxheight=SH/-2;      //maximale hoogte balkjes
 
 //https://www.random.org/integer-sets/
 var Arrbubble=[29, 45, 6, 67, 55, 24, 71, 42, 15, 34, 38, 76, 20, 19, 54, 81, 59, 23, 7, 1, 64, 49, 74, 72, 70, 4, 58, 92, 88, 33, 75, 53, 9, 57, 36, 79, 30, 44, 60, 95, 80, 82, 52, 85, 48, 90, 73, 99, 50, 21, 5, 83, 39, 93, 66, 62, 41, 25, 12, 96, 18, 61, 94, 40, 89, 68, 3, 26, 69, 10, 56, 46, 97, 43, 86, 77, 14, 17, 32, 27, 31, 65, 98, 8, 16, 37, 100, 35, 51, 87, 2, 28, 22, 63, 13, 11, 84, 47, 78, 91];
@@ -9,12 +13,18 @@ var Arrinsertion=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24
 var IL=Arrinsertion.length;
 var Arrquick=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75];
 var QL=Arrquick.length;
-var Arrmerge=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+var Arrmerge=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51];
 var ML=Arrmerge.length;
 var states=[];
 
+var bubbletext="Bubblesort is een van de eenvoudigste sorteeralgoritmes. Het algoritme loopt door het algoritme. Bij elk paar dat het tegenkomt wordt er gekeken welk getal groter is. Als het eerste getal van het paar groter is, dan worden de getallen omgedraait, als het tweede getal groter is, gebeurt er niks. Als het algoritme het laatste paar heeft vergeleken zijn er twee optie: 1. begin bij het eerste paar als er 2 getallen zijn omgedraait. of 2. er zijn geen getallen omgedraaid en wat er gesorteerd moest worden is gesorteerd.";
+var insertiontext="Insertionsort is een methode die mensen vaak gebruiken, bijvoorbeeld bij het sorteren van een pak kaarten. Bij elk cijfer of element wordt er gekeken of waar die moet in de rij van al gesorteerde cijfer/elementen. Algoritmes doen dit door te kijken of het cijfer dat ze nu willen sorteren hoger of lager is dan het cijfer dat ervoor staat. Als het hoger is gaat het algoritme door met sorteren met het eerstvolgende niet gesorteerde cijfer. Als het cijfer lager is wissel het om met het andere cijfer en vergelijk vervolgens weer met het cijfer dat ervoor staat.";
+var quicktext1="Quicksort maakt gebruit van een zogeheten pivot. Het algoritme kijkt of het rode balkje groter of kleiner is dan de pivot. Als het getal groter is wordt het licht blauw en komt het links van de rode balk te staan. Als het getal kleiner is dan de pivot wordt komt het getal links van de rode balk te staan. Na een ronde wordt alles links van de pivot gesorteerd door een nieuwe pivot te kiezen, dit wordt net zolang herhaald tot alles links van de oorspronkelijke pivot gesorteerd is. Daarna wordt dat proces aan de rechterkant herhaald.";
+var quicktext2="Het zou ideaal zijn als de pivot een getal zou zijn die ergens in het midden ligt qua waarde. Helaas is dit niet altijd zo. Het laatste cijfer van het stuk dat op dat moment gesorteerd word wordt als pivot gekozen. Dit kan een hoog of laag getal zijn, of ergens tussen in. Het gevolg van een relatief hoog of laag getal is dat de twee helften oneerlijk verdeeld zijn.";
+var mergetext="Mergesort splitst de rij van getaalen in tweeën. Elke helft wordt ook weer in tweeën gesplitst. Dit wordt herhaald tot elk getal zijn eigen rijtje heeft. Daarna wordt alles gesorteerd door steeds nieuwe rijtjes te maken. Er wordt gekeken naar het eerste getal van twee rijtjes. Het laagste getal wordt vooraan het nieuwe rijte gezet. Daarna herhaalt het algoritme deze stap net zo lang tot de twee oude rijtjes leeg zijn. Daarna gaat het algoritme twee anders rijtes samenvoegen tot één rijtje, net zolang tot er nog maar één (gesorteerd) rijte over is.";
+
 function setup() {
-  canvas = createCanvas(1900,900);
+  canvas = createCanvas(SW,SH);
   background('white');
   canvas.parent('processing');
   //noLoop();
@@ -22,12 +32,16 @@ function setup() {
 }
 
 function draw() {
-    translate(0,900);
+    translate(0,SH);
+
+
     if (sorting=='bubble') {
         clear();
+        fill('black');
+        text(bubbletext,MW,MW-SH,0.2*SW,SH/2);
         fill('silver');
         for (b=0;b<BL;b++) {
-            rect(40+1830/BL*b,0,1830/BL,maxheight/BL*Arrbubble[b]);
+            rect(MW+AW/BL*b,0,AW/BL,maxheight/BL*Arrbubble[b]);
         }
 
         if (play==true) {
@@ -37,9 +51,11 @@ function draw() {
 
     else if (sorting=='insertion') {
         clear();
+        fill('black');
+        text(insertiontext,MW,MW-SH,0.2*SW,SH/2);
         fill('silver');
         for (n=0;n<IL;n++) {
-            rect(40+1830/IL*n,0,1830/IL,maxheight/IL*Arrinsertion[n]);
+            rect(MW+AW/IL*n,0,AW/IL,maxheight/IL*Arrinsertion[n]);
         }
 
         if (play==true) {
@@ -49,11 +65,14 @@ function draw() {
 
     else if (sorting=='quick') {
         clear();
+        fill('black');
+        text(quicktext1,MW,MW-SH,0.2*SW,SH/2);
+        text(quicktext2,0.8*SW-2*MW,MW-SH,0.2*SW,SH/2);
         for (q=0;q<QL;q++) {
             if (states[q]==0) {fill('red');}
             else if (states[q]==1) {fill('cyan');}
             else {fill('silver')}
-            rect(40+1830/QL*q,0,1830/QL,maxheight/QL*Arrquick[q]);
+            rect(MW+AW/QL*q,0,AW/QL,maxheight/QL*Arrquick[q]);
         }
         if (play==true) {
             quicksort(Arrquick,0,QL-1);
@@ -62,9 +81,11 @@ function draw() {
     }
     else if (sorting=='merge') {
         clear();
+        fill('black');
+        text(mergetext,MW,MW-SH,0.2*SW,SH/2);
         fill('silver');
         for (m=0;m<ML;m++) {
-            rect(40+1830/ML*m,0,1830/ML,maxheight/ML*Arrmerge[m]);
+            rect(MW+AW/ML*m,0,AW/ML,maxheight/ML*Arrmerge[m]);
         }
         if (play==true) {
             sort(Arrmerge,0,ML-1);
