@@ -25,7 +25,7 @@ function draw() {
     translate(0,900);
     if (sorting=='bubble') {
         clear();
-        fill('silver');
+        fill('red');
         for (b=0;b<BL;b++) {
             rect(40+1830/BL*b,0,1830/BL,maxheight/BL*Arrbubble[b]);
         }
@@ -37,7 +37,7 @@ function draw() {
 
     else if (sorting=='insertion') {
         clear();
-        fill('silver');
+        fill('gray');
         for (n=0;n<IL;n++) {
             rect(40+1830/IL*n,0,1830/IL,maxheight/IL*Arrinsertion[n]);
         }
