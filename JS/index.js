@@ -1,6 +1,8 @@
 var sorting='bubble';
 var play=false;
-var maxheight=-500;
+var maxheight=screen.height /-2;
+var AW=screen.width-0.05*screen.width;
+var MW=screen.width*0.02;
 
 //https://www.random.org/integer-sets/
 var Arrbubble=[29, 45, 6, 67, 55, 24, 71, 42, 15, 34, 38, 76, 20, 19, 54, 81, 59, 23, 7, 1, 64, 49, 74, 72, 70, 4, 58, 92, 88, 33, 75, 53, 9, 57, 36, 79, 30, 44, 60, 95, 80, 82, 52, 85, 48, 90, 73, 99, 50, 21, 5, 83, 39, 93, 66, 62, 41, 25, 12, 96, 18, 61, 94, 40, 89, 68, 3, 26, 69, 10, 56, 46, 97, 43, 86, 77, 14, 17, 32, 27, 31, 65, 98, 8, 16, 37, 100, 35, 51, 87, 2, 28, 22, 63, 13, 11, 84, 47, 78, 91];
@@ -27,7 +29,7 @@ function draw() {
         clear();
         fill('silver');
         for (b=0;b<BL;b++) {
-            rect(40+1830/BL*b,0,1830/BL,maxheight/BL*Arrbubble[b]);
+            rect(MW+AW/BL*b,0,1830/BL,maxheight/BL*Arrbubble[b]);
         }
 
         if (play==true) {
@@ -39,7 +41,7 @@ function draw() {
         clear();
         fill('silver');
         for (n=0;n<IL;n++) {
-            rect(40+1830/IL*n,0,1830/IL,maxheight/IL*Arrinsertion[n]);
+            rect(MW+AW/IL*n,0,1830/IL,maxheight/IL*Arrinsertion[n]);
         }
 
         if (play==true) {
@@ -53,7 +55,7 @@ function draw() {
             if (states[q]==0) {fill('red');}
             else if (states[q]==1) {fill('cyan');}
             else {fill('silver')}
-            rect(40+1830/QL*q,0,1830/QL,maxheight/QL*Arrquick[q]);
+            rect(MW+AW/QL*q,0,1830/QL,maxheight/QL*Arrquick[q]);
         }
         if (play==true) {
             quicksort(Arrquick,0,QL-1);
@@ -64,7 +66,7 @@ function draw() {
         clear();
         fill('silver');
         for (m=0;m<ML;m++) {
-            rect(40+1830/ML*m,0,1830/ML,maxheight/ML*Arrmerge[m]);
+            rect(MW+AW/ML*m,0,1830/ML,maxheight/ML*Arrmerge[m]);
         }
         if (play==true) {
             sort(Arrmerge,0,ML-1);
