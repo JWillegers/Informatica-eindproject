@@ -12,8 +12,9 @@ background-color: #4CAF50; /* Green */
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  bottom: 600px; 
-  position: relative;
+  position: fixed;
+  top:50px;
+  left: 25%;
 }
 
 .hoofdstuk2 {
@@ -25,8 +26,9 @@ background-color: #4CAF50; /* Green */
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  bottom: 600px; 
-  position: relative;
+  position: fixed;
+  top:50px;
+  left: 35%
 }
 
 .hoofdstuk3 {
@@ -38,8 +40,9 @@ background-color: #4CAF50; /* Green */
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  bottom: 600px; 
-  position: relative;
+  position: fixed;
+  top:50px;
+  left: 45%;
 }
 
 .hoofdstuk4 {
@@ -51,8 +54,9 @@ background-color: #4CAF50; /* Green */
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  bottom: 600px; 
-  position: relative;
+  position: fixed;
+  top:50px;
+  left: 55%;
 }
 
 .hoofdstuk5 {
@@ -64,8 +68,9 @@ background-color: #4CAF50; /* Green */
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  bottom: 600px; 
-  position: relative;
+  position: fixed;
+  top:50px;
+  left: 65%;
 }
 
 
