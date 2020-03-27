@@ -1,8 +1,10 @@
 var sorting='bubble';
 var play=false;
-var maxheight=screen.height /-2;
-var AW=screen.width-0.05*screen.width;
-var MW=screen.width*0.02;
+var SH=screen.height*0.9;
+var SW=screen.width;
+var AW=SW-0.05*SW;
+var MW=SW*0.02;
+var maxheight=SH/-2;
 
 //https://www.random.org/integer-sets/
 var Arrbubble=[29, 45, 6, 67, 55, 24, 71, 42, 15, 34, 38, 76, 20, 19, 54, 81, 59, 23, 7, 1, 64, 49, 74, 72, 70, 4, 58, 92, 88, 33, 75, 53, 9, 57, 36, 79, 30, 44, 60, 95, 80, 82, 52, 85, 48, 90, 73, 99, 50, 21, 5, 83, 39, 93, 66, 62, 41, 25, 12, 96, 18, 61, 94, 40, 89, 68, 3, 26, 69, 10, 56, 46, 97, 43, 86, 77, 14, 17, 32, 27, 31, 65, 98, 8, 16, 37, 100, 35, 51, 87, 2, 28, 22, 63, 13, 11, 84, 47, 78, 91];
@@ -15,8 +17,13 @@ var Arrmerge=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 var ML=Arrmerge.length;
 var states=[];
 
+var bubbletext="Bubblesort is een van de eenvoudigste sorteeralgoritmes. Het algoritme loopt door het algoritme. Bij elk paar dat het tegenkomt wordt er gekeken welk getal groter is. Als het eerste getal van het paar groter is, dan worden de getallen omgedraait, als het tweede getal groter is, gebeurt er niks. Als het algoritme het laatste paar heeft vergeleken zijn er twee optie: 1. begin bij het eerste paar als er 2 getallen zijn omgedraait. of 2. er zijn geen getallen omgedraaid en wat er gesorteerd moest worden is gesorteerd.";
+var insertiontext="Insertionsort is een methode die mensen vaak gebruiken, bijvoorbeeld bij het sorteren van een pak kaarten. Bij elk cijfer of element wordt er gekeken of waar die moet in de rij van al gesorteerde cijfer/elementen. Algoritmes doen dit door te kijken of het cijfer dat ze nu willen sorteren hoger of lager is dan het cijfer dat ervoor staat. Als het hoger is gaat het algoritme door met sorteren met het eerstvolgende niet gesorteerde cijfer. Als het cijfer lager is wissel het om met het andere cijfer en vergelijk vervolgens weer met het cijfer dat ervoor staat.";
+var quicktext;
+var mergetext;
+
 function setup() {
-  canvas = createCanvas(1900,900);
+  canvas = createCanvas(SW,SH);
   background('white');
   canvas.parent('processing');
   //noLoop();
@@ -24,9 +31,13 @@ function setup() {
 }
 
 function draw() {
-    translate(0,900);
+    translate(0,SH);
+
+
     if (sorting=='bubble') {
         clear();
+        fill('black');
+        text(bubbletext,MW,MW-SH,0.2*SW,SH/2);
         fill('silver');
         for (b=0;b<BL;b++) {
             rect(MW+AW/BL*b,0,AW/BL,maxheight/BL*Arrbubble[b]);
@@ -39,6 +50,8 @@ function draw() {
 
     else if (sorting=='insertion') {
         clear();
+        fill('black');
+        text(insertiontext,MW,MW-SH,0.2*SW,SH/2);
         fill('silver');
         for (n=0;n<IL;n++) {
             rect(MW+AW/IL*n,0,AW/IL,maxheight/IL*Arrinsertion[n]);
