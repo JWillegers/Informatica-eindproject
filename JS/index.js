@@ -29,7 +29,7 @@ function draw() {
         clear();
         fill('silver');
         for (b=0;b<BL;b++) {
-            rect(MW+AW/BL*b,0,1830/BL,maxheight/BL*Arrbubble[b]);
+            rect(MW+AW/BL*b,0,AW/BL,maxheight/BL*Arrbubble[b]);
         }
 
         if (play==true) {
@@ -41,7 +41,7 @@ function draw() {
         clear();
         fill('silver');
         for (n=0;n<IL;n++) {
-            rect(MW+AW/IL*n,0,1830/IL,maxheight/IL*Arrinsertion[n]);
+            rect(MW+AW/IL*n,0,AW/IL,maxheight/IL*Arrinsertion[n]);
         }
 
         if (play==true) {
@@ -55,7 +55,7 @@ function draw() {
             if (states[q]==0) {fill('red');}
             else if (states[q]==1) {fill('cyan');}
             else {fill('silver')}
-            rect(MW+AW/QL*q,0,1830/QL,maxheight/QL*Arrquick[q]);
+            rect(MW+AW/QL*q,0,AW/QL,maxheight/QL*Arrquick[q]);
         }
         if (play==true) {
             quicksort(Arrquick,0,QL-1);
@@ -66,7 +66,7 @@ function draw() {
         clear();
         fill('silver');
         for (m=0;m<ML;m++) {
-            rect(MW+AW/ML*m,0,1830/ML,maxheight/ML*Arrmerge[m]);
+            rect(MW+AW/ML*m,0,AW/ML,maxheight/ML*Arrmerge[m]);
         }
         if (play==true) {
             sort(Arrmerge,0,ML-1);
