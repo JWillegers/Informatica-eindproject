@@ -1,3 +1,8 @@
+
+body{
+    background-color: lightgreen
+}
+
 .hoofdstuk1 {
 background-color: #4CAF50; /* Green */
   border: none;
@@ -6,9 +11,9 @@ background-color: #4CAF50; /* Green */
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px
-  bottom: 900px
-  position: relative
+  font-size: 16px;
+  bottom: 600px; 
+  position: relative;
 }
 
 .hoofdstuk2 {
@@ -20,6 +25,8 @@ background-color: #4CAF50; /* Green */
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  bottom: 600px; 
+  position: relative;
 }
 
 .hoofdstuk3 {
@@ -31,6 +38,8 @@ background-color: #4CAF50; /* Green */
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  bottom: 600px; 
+  position: relative;
 }
 
 .hoofdstuk4 {
@@ -42,6 +51,8 @@ background-color: #4CAF50; /* Green */
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  bottom: 600px; 
+  position: relative;
 }
 
 .hoofdstuk5 {
@@ -53,7 +64,14 @@ background-color: #4CAF50; /* Green */
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  bottom: 600px; 
+  position: relative;
 }
+
+
+
+
+
 
 
 
