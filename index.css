@@ -6,8 +6,9 @@ background-color: #4CAF50; /* Green */
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin-bottom: 1000px
+  font-size: 16px
+  bottom: 900px
+  position: relative
 }
 
 .hoofdstuk2 {
