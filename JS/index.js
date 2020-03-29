@@ -28,7 +28,7 @@ function setup() {
   background('white');
   canvas.parent('processing');
   //noLoop();
-
+  textSize(20/1980*SW);
 }
 
 function draw() {
