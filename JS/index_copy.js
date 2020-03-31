@@ -28,7 +28,7 @@ function setup() {
   background('white');
   canvas.parent('processing');
   //noLoop();
-
+  textSize(20/1980*SW);
 }
 
 function draw() {
@@ -238,9 +238,9 @@ async function merge(arr,l,m,r) { //https://www.geeksforgeeks.org/merge-sort/
 async function sort(arr,l,r) {
     if (l<r) {
         let m = (l+r)/2;
-        await sort(arr,l,m);
-        await sort(arr,m+1,r);
-        await merge(arr,l,m,r);
+        sort(arr,l,m);
+        sort(arr,m+1,r);
+        merge(arr,l,m,r);
     }
 }
 
