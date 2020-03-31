@@ -1,7 +1,7 @@
 var sorting='bubble';
 var play=false;
-var SH=screen.height*0.8; //screen heigh
-var SW=screen.width;      //screen width
+var SH=screen.height*0.772; //screen heigh
+var SW=screen.width*0.995;      //screen width
 var AW=SW-0.05*SW;        //totale width balkjes
 var MW=SW*0.02;           //width tussen balkjes en zijkant schrem (marge width)
 var maxheight=SH/-2;      //maximale hoogte balkjes
