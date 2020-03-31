@@ -1,10 +1,10 @@
 
 body{
-    background-color: lightgreen
+    background-color: #9BD8E8
 }
 
 .hoofdstuk1 {
-background-color: #4CAF50; /* Green */
+background-color: #00475B; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -18,7 +18,7 @@ background-color: #4CAF50; /* Green */
 }
 
 .hoofdstuk2 {
-background-color: #4CAF50; /* Green */
+background-color: #00475B; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -32,7 +32,7 @@ background-color: #4CAF50; /* Green */
 }
 
 .hoofdstuk3 {
-background-color: #4CAF50; /* Green */
+background-color: #00475B; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -46,7 +46,7 @@ background-color: #4CAF50; /* Green */
 }
 
 .hoofdstuk4 {
-background-color: #4CAF50; /* Green */
+background-color: #00475B; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -60,7 +60,7 @@ background-color: #4CAF50; /* Green */
 }
 
 .hoofdstuk5 {
-background-color: #4CAF50; /* Green */
+background-color: #00475B; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;

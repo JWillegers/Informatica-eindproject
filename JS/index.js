@@ -19,7 +19,7 @@ var states=[];
 
 var bubbletext="Bubble sort is een van de eenvoudigste sorteeralgoritmes. Het algoritme loopt door het algoritme. Bij elk paar dat het tegenkomt wordt er gekeken welk getal groter is. Als het eerste getal van het paar groter is, dan worden de getallen omgedraait, als het tweede getal groter is, gebeurt er niks. Als het algoritme het laatste paar heeft vergeleken zijn er twee opties:  1. begin bij het eerste paar als er 2 getallen zijn omgedraait,                                            2: er zijn geen getallen omgedraaid en wat er gesorteerd moest worden is gesorteerd.";
 var insertiontext="Insertion sort is een methode die mensen vaak gebruiken, bijvoorbeeld bij het sorteren van een pak kaarten. Bij elk cijfer of element wordt er gekeken waar hij moet in de rij van de al gesorteerde cijfer/elementen. Algoritmes doen dit door te kijken of het cijfer dat ze nu willen sorteren hoger of lager is dan het cijfer dat ervoor staat. Als het hoger is gaat het algoritme door met het sorteren van het eerstvolgende niet gesorteerde cijfer. Als het cijfer lager is wisselt hij het om met het andere cijfer en vergelijkt vervolgens dit cijfer weer met het cijfer dat ervoor staat.";
-var quicktext1="Quick sort maakt gebruik van een zogeheten pivot, een getal. Het algoritme kijkt of het rode balkje groter of kleiner is dan de pivot. Als het getal groter is wordt het licht blauw en komt rechts van de rode balk te staan. Als het getal kleiner is dan de pivot, komt het links van de rode balk te staan. Na een ronde wordt alles links van de pivot gesorteerd door een nieuwe pivot te kiezen, dit wordt net zolang herhaald tot alles links van de oorspronkelijke pivot gesorteerd is. Daarna wordt dat proces aan de rechterkant herhaald.";
+var quicktext1="Quick sort maakt gebruik van een zogeheten pivot, een getal. Het algoritme kijkt of het rode balkje groter of kleiner is dan de pivot. Als het getal groter is wordt het groen en komt rechts van de rode balk te staan. Als het getal kleiner is dan de pivot, komt het links van de rode balk te staan. Na een ronde wordt alles links van de pivot gesorteerd door een nieuwe pivot te kiezen, dit wordt net zolang herhaald tot alles links van de oorspronkelijke pivot gesorteerd is. Daarna wordt dat proces aan de rechterkant herhaald.";
 var quicktext2="Het zou ideaal zijn als de pivot een getal zou zijn die ergens in het midden ligt qua waarde. Helaas is dit niet altijd zo. Het laatste cijfer van het stuk dat op dat moment gesorteerd wordt, wordt als pivot gekozen. Dit kan een hoog of laag getal zijn, of ergens tussen in. Het gevolg van een relatief hoog of laag getal is dat de twee helften oneerlijk verdeeld zijn.";
 var mergetext="Merge sort splitst de rij van getallen in tweeën. Elke helft wordt vervolgens ook weer in tweeën gesplitst. Dit wordt herhaald tot elk getal zijn eigen rijtje heeft. Daarna wordt alles gesorteerd door steeds nieuwe rijtjes te maken. Er wordt gekeken naar het eerste getal van twee rijtjes. Het laagste getal wordt vooraan het nieuwe rijtje gezet. Daarna herhaalt het algoritme deze stap net zo lang tot de twee oude rijtjes leeg zijn. Daarna gaat het algoritme twee andere rijtjes samenvoegen tot één rijtje, net zolang tot er nog maar één (gesorteerd) rijtje over is.";
 
@@ -37,9 +37,9 @@ function draw() {
 
     if (sorting=='bubble') {
         clear();
-        fill('black');
+        fill('#00343D');
         text(bubbletext,MW,MW-SH,0.2*SW,SH/2);
-        fill('silver');
+        fill('#4986A3');
         for (b=0;b<BL;b++) {
             rect(MW+AW/BL*b,0,AW/BL,maxheight/BL*Arrbubble[b]);
         }
@@ -51,9 +51,9 @@ function draw() {
 
     else if (sorting=='insertion') {
         clear();
-        fill('black');
+        fill('#00343D');
         text(insertiontext,MW,MW-SH,0.2*SW,SH/2);
-        fill('silver');
+        fill('#4986A3');
         for (n=0;n<IL;n++) {
             rect(MW+AW/IL*n,0,AW/IL,maxheight/IL*Arrinsertion[n]);
         }
@@ -65,13 +65,13 @@ function draw() {
 
     else if (sorting=='quick') {
         clear();
-        fill('black');
+        fill('#00343D');
         text(quicktext1,MW,MW-SH,0.2*SW,SH/2);
         text(quicktext2,0.8*SW-2*MW,MW-SH,0.2*SW,SH/2);
         for (q=0;q<QL;q++) {
-            if (states[q]==0) {fill('red');}
-            else if (states[q]==1) {fill('cyan');}
-            else {fill('silver')}
+            if (states[q]==0) {fill('#C90808');}
+            else if (states[q]==1) {fill('#67BF5F');}
+            else {fill('#4986A3')}
             rect(MW+AW/QL*q,0,AW/QL,maxheight/QL*Arrquick[q]);
         }
         if (play==true) {
@@ -81,9 +81,9 @@ function draw() {
     }
     else if (sorting=='merge') {
         clear();
-        fill('black');
+        fill('#00343D');
         text(mergetext,MW,MW-SH,0.2*SW,SH/2);
-        fill('silver');
+        fill('#4986A3');
         for (m=0;m<ML;m++) {
             rect(MW+AW/ML*m,0,AW/ML,maxheight/ML*Arrmerge[m]);
         }
