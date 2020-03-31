@@ -54,7 +54,7 @@ function draw() {
         clear();
         fill('#00343D');
         text(insertiontext,MW,MW-SH,0.2*SW,SH/2);
-        fill('#4986A3');
+        fill('#5DA2AD');
         for (n=0;n<IL;n++) {
             rect(MW+AW/IL*n,0,AW/IL,maxheight/IL*Arrinsertion[n]);
         }
@@ -72,7 +72,7 @@ function draw() {
         for (q=0;q<QL;q++) {
             if (states[q]==0) {fill('#C90808');}
             else if (states[q]==1) {fill('#419370');}
-            else {fill('#4986A3')}
+            else {fill('#5DA2AD')}
             rect(MW+AW/QL*q,0,AW/QL,maxheight/QL*Arrquick[q]);
         }
         if (play==true) {
@@ -86,7 +86,7 @@ function draw() {
         text(mergetext1,MW,MW-SH,0.2*SW,SH/2);
         fill('#C90808');
         text(mergetext2,0.8*SW-2*MW,MW-SH,0.2*SW,SH/2);
-        fill('#4986A3');
+        fill('#5DA2AD');
         for (m=0;m<ML;m++) {
             rect(MW+AW/ML*m,0,AW/ML,maxheight/ML*Arrmerge[m]);
         }
@@ -221,5 +221,4 @@ async function merge(left, right, end) {
 
   return arrays;
 } 
-
 
