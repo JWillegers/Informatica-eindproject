@@ -1,13 +1,14 @@
 
 body{
-    background-color: #9BD8E8
+background-image: url(https://www.publicdomainpictures.net/pictures/210000/velka/blue-marble.jpg);
+background-position: 0% 15%;
+
 }
 
 .buttons {
 background-color: #00475B; /* blue */
   border: none;
   color: white;
-  padding: 1% 2%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -16,7 +17,7 @@ background-color: #00475B; /* blue */
 }
 
 .bubble {
-background-color: #00475B; /* blue */
+background-color: #105B6D; /* blue */
   border: none;
   color: white;
   padding: 1% 2%;
@@ -30,7 +31,7 @@ background-color: #00475B; /* blue */
 }
 
 .insertion {
-background-color: #00475B; /* blue */
+background-color: #105B6D; /* blue */
   border: none;
   color: white;
   padding: 1% 2%;
@@ -44,7 +45,7 @@ background-color: #00475B; /* blue */
 }
 
 .play {
-background-color: #00475B; /* blue */
+background-color: #105B6D; /* blue */
   border: none;
   color: white;
   padding: 1% 2%;
@@ -58,7 +59,7 @@ background-color: #00475B; /* blue */
 }
 
 .quick {
-background-color: #00475B; /* blue */
+background-color: #105B6D; /* blue */
   border: none;
   color: white;
   padding: 1% 2%;
@@ -72,7 +73,7 @@ background-color: #00475B; /* blue */
 }
 
 .merge {
-background-color: #00475B; /* blue */
+background-color: #105B6D; /* blue */
   border: none;
   color: white;
   padding: 1% 2%;
@@ -84,6 +85,9 @@ background-color: #00475B; /* blue */
   top:7%;
   left: 63.25%;
 }
+
+
+
 
 
 
