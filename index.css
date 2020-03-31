@@ -3,11 +3,23 @@ body{
     background-color: #9BD8E8
 }
 
-.hoofdstuk1 {
-background-color: #00475B; /* Green */
+.buttons {
+background-color: #00475B; /* blue */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 1% 2%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  position: fixed;
+}
+
+.bubble {
+background-color: #00475B; /* blue */
+  border: none;
+  color: white;
+  padding: 1% 2%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -17,8 +29,8 @@ background-color: #00475B; /* Green */
   left: 25%;
 }
 
-.hoofdstuk2 {
-background-color: #00475B; /* Green */
+.insertion {
+background-color: #00475B; /* blue */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -31,8 +43,8 @@ background-color: #00475B; /* Green */
   left: 35%
 }
 
-.hoofdstuk3 {
-background-color: #00475B; /* Green */
+.play {
+background-color: #00475B; /* blue */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -45,8 +57,8 @@ background-color: #00475B; /* Green */
   left: 45%;
 }
 
-.hoofdstuk4 {
-background-color: #00475B; /* Green */
+.quick {
+background-color: #00475B; /* blue */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -59,8 +71,8 @@ background-color: #00475B; /* Green */
   left: 55%;
 }
 
-.hoofdstuk5 {
-background-color: #00475B; /* Green */
+.merge {
+background-color: #00475B; /* blue */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -72,14 +84,5 @@ background-color: #00475B; /* Green */
   top:50px;
   left: 65%;
 }
-
-
-
-
-
-
-
-
-
 
 
