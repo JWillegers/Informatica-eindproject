@@ -11,7 +11,7 @@ background-color: #00475B; /* blue */
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 7%;
   position: fixed;
 }
 
@@ -23,66 +23,67 @@ background-color: #00475B; /* blue */
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1400%;
   position: fixed;
-  top:50px;
-  left: 25%;
+  top:7%;
+  left: 28.65%;
 }
 
 .insertion {
 background-color: #00475B; /* blue */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 1% 2%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1400%;
   position: fixed;
-  top:50px;
-  left: 35%
+  top:7%;
+  left: 38%
 }
 
 .play {
 background-color: #00475B; /* blue */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 1% 2%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1400%;
   position: fixed;
-  top:50px;
-  left: 45%;
+  top:7%;
+  left: 48%;
 }
 
 .quick {
 background-color: #00475B; /* blue */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 1% 2%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1400%;
   position: fixed;
-  top:50px;
-  left: 55%;
+  top:7%;
+  left: 54.3%;
 }
 
 .merge {
 background-color: #00475B; /* blue */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 1% 2%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1400%;
   position: fixed;
-  top:50px;
-  left: 65%;
+  top:7%;
+  left: 63.25%;
 }
+
 
 
