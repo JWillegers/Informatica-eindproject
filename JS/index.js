@@ -40,7 +40,7 @@ function draw() {
         clear();
         fill('#00343D');
         text(bubbletext,MW,MW-SH,0.2*SW,SH/2);
-        fill('#4986A3');
+        fill('#5DA2AD');
         for (b=0;b<BL;b++) {
             rect(MW+AW/BL*b,0,AW/BL,maxheight/BL*Arrbubble[b]);
         }
@@ -71,7 +71,7 @@ function draw() {
         text(quicktext2,0.8*SW-2*MW,MW-SH,0.2*SW,SH/2);
         for (q=0;q<QL;q++) {
             if (states[q]==0) {fill('#C90808');}
-            else if (states[q]==1) {fill('#67BF5F');}
+            else if (states[q]==1) {fill('#419370');}
             else {fill('#4986A3')}
             rect(MW+AW/QL*q,0,AW/QL,maxheight/QL*Arrquick[q]);
         }
@@ -221,4 +221,5 @@ async function merge(left, right, end) {
 
   return arrays;
 } 
+
 
