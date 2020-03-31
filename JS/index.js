@@ -13,7 +13,7 @@ var Arrinsertion=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24
 var IL=Arrinsertion.length;
 var Arrquick=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75];
 var QL=Arrquick.length;
-var Arrmerge=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51];
+var Arrmerge=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64];
 var ML=Arrmerge.length;
 var states=[];
 
@@ -88,7 +88,7 @@ function draw() {
             rect(MW+AW/ML*m,0,AW/ML,maxheight/ML*Arrmerge[m]);
         }
         if (play==true) {
-            sort(Arrmerge,0,ML-1);
+            mergesort(Arrmerge);
         }
     }
     else {
@@ -195,53 +195,27 @@ function sleep(ms) { //delay tussen stappen voor quicksort
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function merge(arr,l,m,r) { //https://www.geeksforgeeks.org/merge-sort/
-    let n1=m-1+1;
-    let n2=r-m;
+async function mergesort(array) { //https://bl.ocks.org/mbostock/1b5450d525babd28425f
+  var arrays = [array.slice()],
+      n = array.length,
+      array0 = array,
+      array1 = new Array(n);
 
-    var L= [n1];
-    var R= [n2];
-
-    for (let i=0;i<n1;++i) {
-        L[i]=arr[l+i];
+  for (var m = 1; m < n; m <<= 1) {
+    for (var i = 0; i < n; i += (m << 1)) {
+       await merge(i, Math.min(i + m, n), Math.min(i + (m << 1), n));
     }
-    for (let j=0;j<n2;++j) {
-        R[j]=arr[m+1+j];
-    }
+    await sleep(1000);
+    arrays.push(array1.slice());
+    array = array0, array0 = array1, array1 = array;
+  }
 
-    let i=0,j=0;
-    let k=l;
-    while (i<n1 && j<n2) {
-        if (L[i]<=R[j]) {
-            arr[k]=L[i];
-            i++;
-        }
-        else {
-            arr[k]=R[j];
-            j++;
-        }
+async function merge(left, right, end) {
+    for (var i0 = left, i1 = right, j = left; j < end; ++j) {
+      array1[j] = array0[i0 < right && (i1 >= end || array0[i0] <= array0[i1]) ? i0++ : i1++];
     }
+  }
 
-    while (i<n1) {
-        arr[k]=L[i];
-        i++;
-        k++;
-    }
-
-    while (j<n2) {
-        arr[k]=R[j];
-        j++;
-        k++;
-    }
-}
-
-async function sort(arr,l,r) {
-    if (l<r) {
-        let m = (l+r)/2;
-        await sort(arr,l,m);
-        await sort(arr,m+1,r);
-        await merge(arr,l,m,r);
-    }
-}
-
+  return arrays;
+} 
 
