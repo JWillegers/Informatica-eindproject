@@ -1,9 +1,9 @@
 var sorting='bubble';
 var play=false;
-var SH=screen.height*0.772; //screen heigh
+var SH=screen.height*0.84; //screen heigh
 var SW=screen.width*0.995;      //screen width
 var AW=SW-0.05*SW;        //totale width balkjes
-var MW=SW*0.02;           //width tussen balkjes en zijkant schrem (marge width)
+var MW=SW*0.02;           //width tussen balkjes en zijkant scherm (marge width)
 var maxheight=SH/-2;      //maximale hoogte balkjes
 
 //https://www.random.org/integer-sets/
@@ -19,7 +19,7 @@ var states=[];
 
 var bubbletext="Bubble sort is een van de eenvoudigste sorteeralgoritmes. Het algoritme loopt door het algoritme. Bij elk paar dat het tegenkomt wordt er gekeken welk getal groter is. Als het eerste getal van het paar groter is, dan worden de getallen omgedraait, als het tweede getal groter is, gebeurt er niks. Als het algoritme het laatste paar heeft vergeleken zijn er twee opties:  1. begin bij het eerste paar als er 2 getallen zijn omgedraait,                                            2: er zijn geen getallen omgedraaid en wat er gesorteerd moest worden is gesorteerd.";
 var insertiontext="Insertion sort is een methode die mensen vaak gebruiken, bijvoorbeeld bij het sorteren van een pak kaarten. Bij elk cijfer of element wordt er gekeken waar hij moet in de rij van de al gesorteerde cijfer/elementen. Algoritmes doen dit door te kijken of het cijfer dat ze nu willen sorteren hoger of lager is dan het cijfer dat ervoor staat. Als het hoger is gaat het algoritme door met het sorteren van het eerstvolgende niet gesorteerde cijfer. Als het cijfer lager is wisselt hij het om met het andere cijfer en vergelijkt vervolgens dit cijfer weer met het cijfer dat ervoor staat.";
-var quicktext1="Quick sort maakt gebruik van een zogeheten pivot, een getal. Het algoritme kijkt of het rode balkje groter of kleiner is dan de pivot. Als het getal groter is wordt het groen en komt rechts van de rode balk te staan. Als het getal kleiner is dan de pivot, komt het links van de rode balk te staan. Na een ronde wordt alles links van de pivot gesorteerd door een nieuwe pivot te kiezen, dit wordt net zolang herhaald tot alles links van de oorspronkelijke pivot gesorteerd is. Daarna wordt dat proces aan de rechterkant herhaald.";
+var quicktext1="Quick sort maakt gebruik van een zogeheten pivot, een getal. Het algoritme kijkt of het rode balkje groter of kleiner is dan de pivot. Als het getal groter is, wordt het balkje groen en komt het rechts van de rode balk te staan. Als het getal kleiner is dan de pivot, komt het links van de rode balk te staan. Na een ronde wordt alles links van de pivot gesorteerd door een nieuwe pivot te kiezen, dit wordt net zolang herhaald tot alles links van de oorspronkelijke pivot gesorteerd is. Daarna wordt dat proces aan de rechterkant herhaald.";
 var quicktext2="Het zou ideaal zijn als de pivot een getal zou zijn die ergens in het midden ligt qua waarde. Helaas is dit niet altijd zo. Het laatste cijfer van het stuk dat op dat moment gesorteerd wordt, wordt als pivot gekozen. Dit kan een hoog of laag getal zijn, of ergens tussen in. Het gevolg van een relatief hoog of laag getal is dat de twee helften oneerlijk verdeeld zijn.";
 var mergetext1="Merge sort splitst de rij van getallen in tweeën. Elke helft wordt vervolgens ook weer in tweeën gesplitst. Dit wordt herhaald tot elk getal zijn eigen rijtje heeft. Daarna wordt alles gesorteerd door steeds nieuwe rijtjes te maken. Er wordt gekeken naar het eerste getal van twee rijtjes. Het laagste getal wordt vooraan het nieuwe rijtje gezet. Daarna herhaalt het algoritme deze stap net zo lang tot de twee oude rijtjes leeg zijn. Daarna gaat het algoritme twee andere rijtjes samenvoegen tot één rijtje, net zolang tot er nog maar één (gesorteerd) rijtje over is.";
 var mergetext2="WARNING: door problemen met timing tijdens het sorteren is deze versie van merge sort niet stabiel. Probeer niet te snel dit sorteer algoritme weer te gebruiken.";
@@ -221,4 +221,3 @@ async function merge(left, right, end) {
 
   return arrays;
 } 
-
